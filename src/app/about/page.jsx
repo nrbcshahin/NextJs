@@ -1,8 +1,5 @@
-import Image from "next/image";
-
-
-export default async function Home() {
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+export default async function About() {
+   const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
     cache: 'no-store', // like getServerSideProps (no caching)
   })
   const posts = await res.json()
@@ -11,7 +8,7 @@ export default async function Home() {
     <div>
       <h1>SSR Data (App Router)</h1>
       <ul>
-        {posts.slice(0, 5).map(post => (
+        {posts.slice(10,50 ).map(post => (
           <li key={post.id}>{post.title}</li>
         ))}
       </ul>
